@@ -72,13 +72,13 @@ class CNAlpsWeather extends WP_Widget
         $apiResponse = $this->CallAPI("GET", $url,);
         $apiResponse = json_decode($apiResponse, true);
         echo $before_widget;
-        echo '<div class="cnalps-weather-widget">
+        echo '
+              <div class="cnalps-weather-widget">
                 <div style="text-align: center" class="weather-title">Météo à ' . $instance['city'] . '</div>
                 <img style="align-self: center" src="' . $apiResponse['icon'] . '" alt="météo">
                 <h4 style="text-align: center; color: white ">' . $apiResponse['temp'] . '°C</h4>
                 <p style="text-align: center; color: white ">' . $apiResponse['description'] . '</p>
-              </div>
-             ';
+              </div>';
 
         echo $after_widget;
 
